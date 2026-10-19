@@ -47,15 +47,20 @@ public class PlayerController : MonoBehaviour {
 
         }
 
-          if (Input.GetKey(R))
-         {
+           if (Input.GetKey(R))
+          {
             GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-          
+           
             if(GetComponent<SpriteRenderer>()!=null)
             {
                  GetComponent<SpriteRenderer>().flipX = false;
             }
-         }
+          }
+
+          if (!Input.GetKey(L) && !Input.GetKey(R))
+          {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, GetComponent<Rigidbody2D>().velocity.y);
+          }
 
           anim.SetFloat("SpeedAnimation",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
           anim.SetBool("GroundAnimation", grounded);

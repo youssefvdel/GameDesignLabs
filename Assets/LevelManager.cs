@@ -24,6 +24,11 @@ public class LevelManager : MonoBehaviour
     public void RespawnPlayer()
     {
 
-        FindObjectOfType<PlayerController>().transform.position = CurrentCheckpoint.transform.position;
+        if (CurrentCheckpoint != null)
+        {
+            var player = FindObjectOfType<PlayerController>();
+            if (player != null)
+                player.transform.position = CurrentCheckpoint.transform.position;
+        }
     }
 }
