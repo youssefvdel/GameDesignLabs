@@ -31,4 +31,9 @@ public class LevelManager : MonoBehaviour
                 player.transform.position = CurrentCheckpoint.transform.position;
         }
     }
+
+
+
+
+
 }
